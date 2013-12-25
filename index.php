@@ -8,7 +8,7 @@
 		<meta name="author" content="">
 		<link rel="shortcut icon" href="http://calm-scrubland-1840.herokuapp.com/docs-assets/ico/favicon.png">
 
-		<title>XX</title>
+		<title>I.W.E</title>
 
 		<!-- Bootstrap core CSS -->
 		<link href="http://calm-scrubland-1840.herokuapp.com/dist/css/bootstrap.css" rel="stylesheet">
@@ -246,40 +246,60 @@
 			<script src="./XX_files/bootstrap.min.js"></script>
 			<script src="./XX_files/holder.js"></script>
 		    <!-- BLOCK: Your script playground -->
-   			<script id="my-script-playground">
- 		    	// function to set cookie, never mind.
-		     	function set_cookie(k, v) {
-					document.cookie = k + "=" + v;
-     			}
-    		    fb_login_scopes = [
-  		          "read_stream",
-  		          "read_friendlists",
-      		      "publish_stream"
-      			  ];
-      			window.fbLoaded = function(){
-    		        // define the events when login status changed.
-    		        FB.Event.subscribe('auth.login', function(response) {
-            	    // when user has been logged in, this block will be triggered.
-            	    var msg = "You're logged in.";
-             	   	$("#my-login-message").html(msg);
-           		   	console.log("Your login response:");
-                	console.log(response);
-           		 });
+    <script id="my-script-playground">
+        window.fbLoaded = function(){
+            // define the events when login status changed.
+            FB.Event.subscribe('auth.login', function(response) {
+                // when user has been logged in, this block will be triggered.
+                var msg = "You're logged in.";
+                $("#my-login-message").html(msg);
+                console.log("Your login response:");
+                console.log(response);
 
-      	    	  // define the action when user clicked the login button.
-        	    $("#my-login-button").click(function(){
-                	FB.login(function(response){
-                    	// here we need to set cookie manually because of changes on Facebook's OAuth
-                    	if (response.authResponse) {
-                        	var accessToken = response.authResponse.accessToken;
-                       		set_cookie('fb_access_token', accessToken);
-                    	}
-               		 }, {
-                	    'scope': fb_login_scopes.join(",")
-               			 });
-            		}); 
-				};
-    		</script>
+                // fetch the profile
+                fetch_my_profile();
+            });
+
+            // define the action when user clicked the login button.
+            $("#my-login-button").click(function(){
+                FB.login();
+            });
+
+            var fetch_my_profile = function () {
+                /*
+                Fetching profile information.
+                For more detail, please vist the following url:
+
+                (Graph API: User documentation)
+                https://developers.facebook.com/docs/graph-api/reference/user/
+                */
+                FB.api('/me', function(response) {
+                    var my_name = response.name;
+                    var my_gender = response.gender;
+                    var my_username = response.username;
+                    var my_facebook_id = response.id;
+
+                    $("#my-profile-name").html(my_name);
+                    $("#my-profile-gender").html(my_gender);
+                    $("#my-profile-username").html(my_username);
+                    $("#my-profile-facebook-id").html(my_facebook_id);
+                });
+
+                /*
+                Fetching profile picture from Facebook.
+                For more detail, please visit the following url:
+
+                (Graph API: User/Picture reference)
+                https://developers.facebook.com/docs/graph-api/reference/user/picture/
+                */
+                FB.api('/me/picture?width=250', function(response) {
+                    var my_picture_url = response.data.url;
+                
+                    $("#my-profile-picture").attr('src', my_picture_url);
+                });
+            };
+        };
+    </script>
 		    <!-- ENDBLOCK: Your script playground -->
 		
 	</body>
