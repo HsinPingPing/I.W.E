@@ -143,7 +143,20 @@
 			<!-- Wrap the rest of the page in another container to center all the content. -->
 
 
+			<div class="container marketing">
 
+				<hr class="featurette-divider">
+
+				<div class="row featurette">
+					<div class="col-md-7">
+						<h2 class="featurette-heading"> You may like...  <span class="text-muted">It'll blow your mind!</span></h2>
+						<p class="lead"> all kinds of food </p>
+					</div>
+					<div class="col-md-5">
+						<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					</div>
+				</div>
+			</div>
 				<!-- FOOTER -->
 				<footer>
 				<p class="pull-right"><a href="http://calm-scrubland-1840.herokuapp.com/#">Back to top</a></p>
