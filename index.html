@@ -10,6 +10,9 @@
 
 		<title>I.W.E</title>
 
+		<!-- BLOCK: Loading libraries -->
+		<script src="./heroku.config"></script>
+
 		<!-- Bootstrap core CSS -->
 		<link href="http://calm-scrubland-1840.herokuapp.com/dist/css/bootstrap.css" rel="stylesheet">
 
@@ -27,7 +30,7 @@
     window.fbAsyncInit = function() {
         // init the FB JS SDK
         FB.init({
-            appId      : "{{ facebook_app_id }}",              // App ID from the app dashboard
+            appId      : FACEBOOK_APP_ID,              // App ID from the app dashboard
             cookie     : true,                                 // Allowed server-side to fetch fb auth cookie
             status     : true,                                 // Check Facebook Login status
             xfbml      : true,                                 // Look for social plugins on the page
