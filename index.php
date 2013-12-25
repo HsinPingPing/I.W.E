@@ -11,7 +11,7 @@
 		<title>I.W.E</title>
 
 		<!-- BLOCK: Loading libraries -->
-		<script src="./heroku.config"></script>
+		<script src="./heroku.js"></script>
 
 		<!-- Bootstrap core CSS -->
 		<link href="http://calm-scrubland-1840.herokuapp.com/dist/css/bootstrap.css" rel="stylesheet">
