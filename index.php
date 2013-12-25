@@ -65,7 +65,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="http://calm-scrubland-1840.herokuapp.com/index.php">XX</a>
+							<a class="navbar-brand" href="http://calm-scrubland-1840.herokuapp.com/index.php">I.W.E</a>
 						</div>
 						<div class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
@@ -88,21 +88,21 @@
 		<div id="myCarousel" class="carousel slide" style="z-index:1">
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="">
+					<img src="pic1.png">
 					<div class="container">
 						<div class="carousel-caption">
-							<h3><font color="white">XX </font></h3>   
+							<h3><font color="white">W.I.E</font></h3>   
 							<p class="lead">
 							</p><div class="alert alert-info" style="opacity: 0.7"><font color="black" size="3">
 									I am XX</font>
 							</div>
 							<p></p>
 						</div>
-						<div align="right"><font color="white">@Chiufen, Taiwan 2010</font></div>
+						<div align="right"><font color="white">Hsu</font></div>
 					</div>
 				</div>
 				<div class="item">
-					<img src="" alt="">
+					<img src="pic2.png" alt="">
 					<div class="container">
 						<div class="carousel-caption">
 							<h3><font color="white">XX </font></h3>   
@@ -112,11 +112,11 @@
 							</div>
 							<p></p>
 						</div>
-						<div align="right"><font color="white">@Costa Rica 2009 (Taken by Prof. Yuh-Dauh Lyuu)</font></div>
+						<div align="right"><font color="white">Hsu</font></div>
 					</div>
 				</div>
 				<div class="item">
-					<img src="" alt="">
+					<img src="pic3.png" alt="">
 					<div class="container">
 						<div class="carousel-caption">
 							<h3>XX </h3>   
@@ -126,27 +126,56 @@
 							</div>
 							<p></p>
 						</div>
-						<div align="right"><font color="white">@Hualien, Taiwan 2011</font></div>
+						<div align="right"><font color="white">Hsu</font></div>
 
 					</div>
 				</div>          
 			</div>
-			<a class="right carousel-control" href="http://calm-scrubland-1840.herokuapp.com/#myCarousel" data-slide="next">›</a>
-			<a class="left carousel-control" href="http://calm-scrubland-1840.herokuapp.com/#myCarousel" data-slide="prev">‹</a>
+			<a class="right carousel-control" href="http://calm-scrubland-1840.herokuapp.com/#myCarousel" data-slide="next"></a>
+			<a class="left carousel-control" href="http://calm-scrubland-1840.herokuapp.com/#myCarousel" data-slide="prev"></a>
 
-		</div>
+			</div>
 			<!-- /.carousel -->
 
 
 			<!-- Marketing messaging and featurettes
 			================================================== -->
 			<!-- Wrap the rest of the page in another container to center all the content. -->
-
+			
+			<div class="navbar-wrapper pull-left">
+				<div class="container">
+					<!-- Profile Area -->
+					<div id="my-profile" class="row">
+						<div class="col-md-3">
+							<!-- Profile Picture -->
+							<img id="my-profile-picture" class="img-thumbnail" src="" alt="">
+						</div>
+						<div class="col-md-9">
+							<!-- Profile Information -->
+							<dl class="dl-horizontal">
+								<dt>Name</dt>
+								<dd id="my-profile-name"></dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>Gender</dt>
+								<dd id="my-profile-gender"></dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>Username</dt>
+								<dd id="my-profile-username"></dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>Facebook ID</dt>
+								<dd id="my-profile-facebook-id"></dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="container marketing">
 
 				<hr class="featurette-divider">
-
 				<div class="row featurette">
 					<div class="col-md-7">
 						<h2 class="featurette-heading"> You may like...  <span class="text-muted">It'll blow your mind!</span></h2>
@@ -156,7 +185,51 @@
 						<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
 					</div>
 				</div>
-			</div>
+
+				<hr class="featurette-divider">
+				<div class="row featurette">
+					<div class="col-md-7">
+						<h2 class="featurette-heading">Steak <span class="text-muted">Check it out! </span></h2>
+						<p class="lead"> </p>
+					</div>
+					<div class="col-md-5">
+						<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					</div>
+				</div>
+
+				<hr class="featurette-divider">
+				<div class="row featurette">
+					<div class="col-md-5">
+						<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					</div>
+					<div class="col-md-7">
+						<h2 class="featurette-heading">Pizza <span class="text-muted">See it yourself.</span></h2>
+						<p class="lead"> </p>
+					</div>
+				</div>
+
+				<hr class="featurette-divider">
+				<div class="row featurette">
+					<div class="col-md-7">
+						<h2 class="featurette-heading">Pasta <span class="text-muted">Check it out! </span></h2>
+						<p class="lead"> </p>
+					</div>
+					<div class="col-md-5">
+						<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					</div>
+				</div>
+
+				<hr class="featurette-divider">
+				<div class="row featurette">
+					<div class="col-md-5">
+						<img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+					</div>
+					<div class="col-md-7">
+						<h2 class="featurette-heading">Salad <span class="text-muted">See for yourself.</span></h2>
+						<p class="lead"> </p>
+					</div>
+				</div>
+
 				<!-- FOOTER -->
 				<footer>
 				<p class="pull-right"><a href="http://calm-scrubland-1840.herokuapp.com/#">Back to top</a></p>
