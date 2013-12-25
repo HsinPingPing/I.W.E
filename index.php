@@ -19,6 +19,40 @@
 	<!-- NAVBAR
 	================================================== -->
 	<body style="">
+
+
+    <!-- BLOCK: FB SDK initialization -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+            appId      : "{{ facebook_app_id }}",              // App ID from the app dashboard
+            cookie     : true,                                 // Allowed server-side to fetch fb auth cookie
+            status     : true,                                 // Check Facebook Login status
+            xfbml      : true,                                 // Look for social plugins on the page
+            oauth      : true
+        });
+        // Additional initialization code such as adding Event Listeners goes here
+        window.fbLoaded();
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        //js.src = "//connect.facebook.net/en_US/all.js";
+        // Debug version of Facebook JS SDK
+        js.src = "//connect.facebook.net/en_US/all/debug.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- ENDBLOCK: FB SDK initialization -->
+
+
+		<!-- Carousel 
+		================================================== -->
 		<div class="navbar-wrapper">
 			<div class="container">
 
@@ -31,7 +65,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="http://calm-scrubland-1840.herokuapp.com/index.html">XX</a>
+							<a class="navbar-brand" href="http://calm-scrubland-1840.herokuapp.com/index.php">XX</a>
 						</div>
 						<div class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
@@ -39,6 +73,7 @@
 								<li><a href="http://calm-scrubland-1840.herokuapp.com/Friends.html">Friends'</a></li>
 								<li><a href="http://calm-scrubland-1840.herokuapp.com/Ranks.html">Rank</a></li>
 								<li><a href="http://calm-scrubland-1840.herokuapp.com/Catagory.html">Catagory</a></li>
+								<button id="my-login-button" class="btn btn-primary">Login with Facebook</button>
 							</ul>
 						</div>
 					</div>
@@ -124,6 +159,42 @@
 			<script src="./XX_files/jquery-1.10.2.min.js"></script>
 			<script src="./XX_files/bootstrap.min.js"></script>
 			<script src="./XX_files/holder.js"></script>
+		    <!-- BLOCK: Your script playground -->
+   			<script id="my-script-playground">
+ 		    	// function to set cookie, never mind.
+		     	function set_cookie(k, v) {
+					document.cookie = k + "=" + v;
+     			}
+    		    fb_login_scopes = [
+  		          "read_stream",
+  		          "read_friendlists",
+      		      "publish_stream"
+      			  ];
+      			window.fbLoaded = function(){
+    		        // define the events when login status changed.
+    		        FB.Event.subscribe('auth.login', function(response) {
+            	    // when user has been logged in, this block will be triggered.
+            	    var msg = "You're logged in.";
+             	   	$("#my-login-message").html(msg);
+           		   	console.log("Your login response:");
+                	console.log(response);
+           		 });
+
+      	    	  // define the action when user clicked the login button.
+        	    $("#my-login-button").click(function(){
+                	FB.login(function(response){
+                    	// here we need to set cookie manually because of changes on Facebook's OAuth
+                    	if (response.authResponse) {
+                        	var accessToken = response.authResponse.accessToken;
+                       		set_cookie('fb_access_token', accessToken);
+                    	}
+               		 }, {
+                	    'scope': fb_login_scopes.join(",")
+               			 });
+            		}); 
+				};
+    		</script>
+		    <!-- ENDBLOCK: Your script playground -->
 		
-	
-</body></html>
+	</body>
+</html>
